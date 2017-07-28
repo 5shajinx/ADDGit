@@ -1,0 +1,140 @@
+//
+//  PrefixHeader.pch
+//  ZmdtvNews
+//
+//  Created by Mac10.11.4 on 16/4/5.
+//  Copyright © 2016年 zmdtvw. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+
+
+
+#define ScreenW [UIScreen mainScreen].bounds.size.width
+
+#define ScreenH [UIScreen mainScreen].bounds.size.height
+
+#define Color(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+#define RandomColor Color(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))/** 随机色  */
+
+#define MYColorRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((rgbValue)((0xc13f2f & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0] 
+
+
+
+#define Kscalew   ScreenW/414
+
+#define Kscaleh    ScreenH/736
+
+
+#define IPHONE8 [[UIDevice currentDevice].systemVersion floatValue] >= 8.0
+
+//轮播图
+
+#define CIRCULATIONIMAGEURL @"http://zmdtt.zmdtvw.cn/Api/Index/carousel"
+
+
+//推荐
+
+#define RECOURL @"http://zmdtt.zmdtvw.cn/Api/Index/index"
+
+//栏目链接
+#define  COLUMNURL @"http://zmdtt.zmdtvw.cn/Api/Category/index"
+
+//栏目切换数据列表链接
+#define  CHANGECOLUMNDATA   @"http://zmdtt.zmdtvw.cn/index.php/Api/Index/lst"
+
+
+#define HTTPURL @"http://cqapp.zmdtvw.cn/newapi.php"
+
+
+
+
+//视频分类链接
+#define VIDEOTYPEURL @"http://cqapp.zmdtvw.cn/vedioapi.php"
+//列表请求
+#define VIDEOURL @"http://cqapp.zmdtvw.cn/vedioListapi.php"
+//视频链接
+#define VIDEODETAILURL @"http://cqapp.zmdtvw.cn/vedioShowapi.php"
+
+
+#define KMLog(fmt, ...)  NSLog(fmt, ##__VA_ARGS__)
+
+
+
+//Masonry免去写mas_所需的宏定义
+#define MAS_SHORTHAND
+#define MAS_SHORTHAND_GLOBALS
+
+#import "WaiLianController.h"
+
+#import "UIImageView+WebCache.h"
+
+#import "Masonry.h"
+
+#import "MJRefresh.h"
+#import "UMSocial.h"
+#import "AFNetworking.h"
+
+#import "MJExtension.h"
+
+#import "MBProgressHUD.h"
+#import "UMSocial.h"
+
+#import "UIView+Extension.h"
+
+#import "FMDB.h"
+
+#import "ZMDNCommonClass.h"
+
+#import <AVFoundation/AVFoundation.h>
+
+#import "ZMDNNetWorkStata.h"
+#import "Manager.h"
+#import "DataBaseManager.h"
+
+#import "HXEasyCustomShareView.h"
+
+#import "NewNetWorkManager.h"
+//全局变量
+
+
+
+//视频栏目api
+#define LMURL @"http://zmdtt.zmdtvw.cn/Api/Category/vedio" //栏目名称
+//视频列表api
+#define DTURL @"http://zmdtt.zmdtvw.cn/index.php/Api/Index/vediolst"
+#define yanzheng @"http://zmdtt.zmdtvw.cn/Api/ptuser/sendlogin"//验证码
+#define userlogin  @"http://zmdtt.zmdtvw.cn/Api/ptuser/loginvalidate"//验证码登录
+
+#define zhmmlogin @"http://zmdtt.zmdtvw.cn/Api/ptuser/login" //账号密码登录
+#define backmima @"http://zmdtt.zmdtvw.cn/api/Ptuser/send"//找回密码
+
+
+
+
+#define wqactive @"http://zmdtt.zmdtvw.cn/api/Activity/index/page/0"//活动
+
+#import "WordFilter.h"
+
+
+#define isture @"http://zmdtt.zmdtvw.cn/Api/ptuser/validate"//判断验证码是否正确
+#define commitdata @"http://zmdtt.zmdtvw.cn/Api/ptuser/uppass"//提交账号密码
+
+
+#define colutionMovie @"http://zmdtt.zmdtvw.cn/index.php/Api/Index/correlation"//相关视频
+
+#define zkurl @"http://zmdtt.zmdtvw.cn/Api/zk/index"//政库
+#define lvliuel @"http://zmdtt.zmdtvw.cn/Api/zk/zkli"
+
+#define zknews @""
+
+#define HomePageNavi @"http://zmdtt.zmdtvw.cn/api/index/navigation"
+
+
+
+#define numberOfPl @"http://zmdtt.zmdtvw.cn/api/Activity/comcount/aid/2"
+
+
+#endif /* PrefixHeader_pch */

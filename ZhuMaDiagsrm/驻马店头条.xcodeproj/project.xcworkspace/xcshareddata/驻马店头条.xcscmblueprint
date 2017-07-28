@@ -1,0 +1,85 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "c89f4e3e-7159-ad4e-8b70-9104fd888cc6++6676+++8B25A95",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "c89f4e3e-7159-ad4e-8b70-9104fd888cc6++7322+++663CF8E" : {
+
+    },
+    "c89f4e3e-7159-ad4e-8b70-9104fd888cc6++6676+++FD8ED2E" : {
+
+    },
+    "c89f4e3e-7159-ad4e-8b70-9104fd888cc6++6676+++8E60E26" : {
+
+    },
+    "c89f4e3e-7159-ad4e-8b70-9104fd888cc6++6676+++B7930B4" : {
+
+    },
+    "c89f4e3e-7159-ad4e-8b70-9104fd888cc6++7322+++6F076A7" : {
+
+    },
+    "c89f4e3e-7159-ad4e-8b70-9104fd888cc6++6676+++FBA0B9C" : {
+
+    },
+    "c89f4e3e-7159-ad4e-8b70-9104fd888cc6++6676+++8B25A95" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "c89f4e3e-7159-ad4e-8b70-9104fd888cc6++7322+++663CF8E" : 9223372036854775807,
+    "c89f4e3e-7159-ad4e-8b70-9104fd888cc6++6676+++FD8ED2E" : 9223372036854775807,
+    "c89f4e3e-7159-ad4e-8b70-9104fd888cc6++6676+++8E60E26" : 9223372036854775807,
+    "c89f4e3e-7159-ad4e-8b70-9104fd888cc6++6676+++B7930B4" : 9223372036854775807,
+    "c89f4e3e-7159-ad4e-8b70-9104fd888cc6++7322+++6F076A7" : 9223372036854775807,
+    "c89f4e3e-7159-ad4e-8b70-9104fd888cc6++6676+++FBA0B9C" : 9223372036854775807,
+    "c89f4e3e-7159-ad4e-8b70-9104fd888cc6++6676+++8B25A95" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "981B447F-BBCE-4A25-A6A5-723AFAABCD96",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "c89f4e3e-7159-ad4e-8b70-9104fd888cc6++7322+++663CF8E" : "ZhuMaDia%E5%89%AF%E6%9C%AC\/",
+    "c89f4e3e-7159-ad4e-8b70-9104fd888cc6++6676+++FD8ED2E" : "ZhuMaDiagsrm\/%E9%A9%BB%E9%A9%AC%E5%BA%97%E5%A4%B4%E6%9D%A1\/Classes\/Others\/Assets.xcassets\/",
+    "c89f4e3e-7159-ad4e-8b70-9104fd888cc6++6676+++8E60E26" : "ZhuMaDia%E5%89%AF%E6%9C%AC\/%E9%A9%BB%E9%A9%AC%E5%BA%97%E5%A4%B4%E6%9D%A1\/Classes\/Others\/Assets.xcassets\/",
+    "c89f4e3e-7159-ad4e-8b70-9104fd888cc6++6676+++B7930B4" : "ZhuMaDiagsrm\/",
+    "c89f4e3e-7159-ad4e-8b70-9104fd888cc6++7322+++6F076A7" : "ZhuMaDia\/",
+    "c89f4e3e-7159-ad4e-8b70-9104fd888cc6++6676+++FBA0B9C" : "ZhuMaDia\/%E9%A9%BB%E9%A9%AC%E5%BA%97%E5%A4%B4%E6%9D%A1\/Classes\/Others\/Assets.xcassets\/",
+    "c89f4e3e-7159-ad4e-8b70-9104fd888cc6++6676+++8B25A95" : "ZhuMaDia\/%E9%A9%BB%E9%A9%AC%E5%BA%97%E5%A4%B4%E6%9D%A1\/Classes\/Others\/Assets.xcassets\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "驻马店头条",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "驻马店头条.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/116.255.255.145:8443\/svn\/ios",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "c89f4e3e-7159-ad4e-8b70-9104fd888cc6++6676+++8B25A95"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/116.255.255.145:8443\/svn\/ios",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "c89f4e3e-7159-ad4e-8b70-9104fd888cc6++6676+++8E60E26"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/116.255.255.145:8443\/svn\/ios",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "c89f4e3e-7159-ad4e-8b70-9104fd888cc6++6676+++B7930B4"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/116.255.255.145:8443\/svn\/ios",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "c89f4e3e-7159-ad4e-8b70-9104fd888cc6++6676+++FBA0B9C"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/116.255.255.145:8443\/svn\/ios",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "c89f4e3e-7159-ad4e-8b70-9104fd888cc6++6676+++FD8ED2E"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/116.255.255.145:8443\/svn\/ios",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "c89f4e3e-7159-ad4e-8b70-9104fd888cc6++7322+++663CF8E"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/116.255.255.145:8443\/svn\/ios",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "c89f4e3e-7159-ad4e-8b70-9104fd888cc6++7322+++6F076A7"
+    }
+  ]
+}

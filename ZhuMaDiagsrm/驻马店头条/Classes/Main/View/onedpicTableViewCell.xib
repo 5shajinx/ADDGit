@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1421" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="113" id="KGk-i7-Jjw" customClass="onedpicTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="413" height="115"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="413" height="114"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="驻马店广播电视台" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YT5-Kd-Gov">
+                        <rect key="frame" x="40" y="72" width="153" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="C3s-a7-Oyd"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="位于苏俄一个人回复地方官不打死机会不多" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lrT-ng-7ME">
+                        <rect key="frame" x="10" y="10" width="283" height="52"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="52" id="7ip-1B-92j"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZeZ-gT-2et">
+                        <rect key="frame" x="303" y="10" width="100" height="80"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="100" id="F4G-4I-eLp"/>
+                            <constraint firstAttribute="height" constant="80" id="imU-t4-raI"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aUu-sS-ihb">
+                        <rect key="frame" x="10" y="72" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="4jA-7T-dGi"/>
+                            <constraint firstAttribute="height" constant="20" id="Nsp-aV-HX0"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="05-05 15:27" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ecm-lu-t64">
+                        <rect key="frame" x="203" y="72" width="90" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="OPg-Sq-6hn"/>
+                            <constraint firstAttribute="width" constant="90" id="YpV-HS-klK"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="lrT-ng-7ME" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="3MB-Na-DIr"/>
+                    <constraint firstItem="lrT-ng-7ME" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="48R-lv-W62"/>
+                    <constraint firstItem="Ecm-lu-t64" firstAttribute="top" secondItem="lrT-ng-7ME" secondAttribute="bottom" constant="10" id="66G-k1-S46"/>
+                    <constraint firstItem="YT5-Kd-Gov" firstAttribute="top" secondItem="lrT-ng-7ME" secondAttribute="bottom" constant="10" id="KCJ-iu-GIY"/>
+                    <constraint firstItem="aUu-sS-ihb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Xbh-W3-nLq"/>
+                    <constraint firstItem="YT5-Kd-Gov" firstAttribute="leading" secondItem="aUu-sS-ihb" secondAttribute="trailing" constant="10" id="ZRL-f2-dZ6"/>
+                    <constraint firstItem="ZeZ-gT-2et" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="fZa-pw-Sqr"/>
+                    <constraint firstItem="ZeZ-gT-2et" firstAttribute="leading" secondItem="Ecm-lu-t64" secondAttribute="trailing" constant="10" id="iGT-OT-ciq"/>
+                    <constraint firstAttribute="trailing" secondItem="ZeZ-gT-2et" secondAttribute="trailing" constant="10" id="m2I-O1-CnX"/>
+                    <constraint firstItem="aUu-sS-ihb" firstAttribute="top" secondItem="lrT-ng-7ME" secondAttribute="bottom" constant="10" id="pq1-JV-o4j"/>
+                    <constraint firstItem="Ecm-lu-t64" firstAttribute="leading" secondItem="YT5-Kd-Gov" secondAttribute="trailing" constant="10" id="xDU-e0-bc7"/>
+                    <constraint firstItem="ZeZ-gT-2et" firstAttribute="leading" secondItem="lrT-ng-7ME" secondAttribute="trailing" constant="10" id="zKK-kK-hG1"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="from" destination="YT5-Kd-Gov" id="V6V-cL-BCb"/>
+                <outlet property="postTime" destination="Ecm-lu-t64" id="e3H-VD-Lec"/>
+                <outlet property="title" destination="lrT-ng-7ME" id="NzK-X5-5O4"/>
+                <outlet property="titlePic" destination="ZeZ-gT-2et" id="nzy-wr-c5f"/>
+                <outlet property="userpic" destination="aUu-sS-ihb" id="StM-CO-Fgl"/>
+            </connections>
+            <point key="canvasLocation" x="-245" y="-53"/>
+        </tableViewCell>
+    </objects>
+</document>
