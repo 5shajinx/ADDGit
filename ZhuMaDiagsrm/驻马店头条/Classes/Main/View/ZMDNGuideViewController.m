@@ -21,7 +21,9 @@
 #import "YinPinViewController.h"
 #import "ZBDTTableViewController.h"
 #import "ZMDDSViewController.h"
-#import "ZMDZBRoomViewController.h"
+#import "ZMDZBRoomViewController.h" 
+#import "ZMDShiPinViewController.h"
+#import "ZMDPicTextZBViewController.h"
 #define PageNum 4
 
 @interface ZMDNGuideViewController ()<UIScrollViewDelegate>
@@ -77,13 +79,24 @@
         if (i == (PageNum - 1))
         {
             
-            UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-            btn.frame = CGRectMake((ScreenW-150)/2, ScreenH-50, 150, 50);
+//            UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+//            btn.frame = CGRectMake((ScreenW-150)/2, ScreenH-50, 150, 50);
+//            
+//            btn.backgroundColor = [UIColor clearColor];
+//            //btn.backgroundColor = [UIColor redColor];
+//            [btn addTarget:self action:@selector(gotoApp:) forControlEvents:UIControlEventTouchUpInside];
+//            [launchImage addSubview:btn];
             
-            btn.backgroundColor = [UIColor clearColor];
-            //btn.backgroundColor = [UIColor redColor];
-            [btn addTarget:self action:@selector(gotoApp:) forControlEvents:UIControlEventTouchUpInside];
-            [launchImage addSubview:btn];
+            
+            UITapGestureRecognizer *ges = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(gotoApp:)];
+            launchImage.userInteractionEnabled = YES;
+            [launchImage addGestureRecognizer:ges];
+            
+            
+            
+            
+            
+            
             
             
             
@@ -133,72 +146,15 @@
 -(void)gotoApp:(UIButton*)sender
 {
     
-    
-//    [Manager sharedManager].liuliang = @"liuliang";
-//    
-//       
-//    CustomPagerController   *movie   = [[CustomPagerController alloc]init];
-//    
-//    
-//    ZhengKuTableViewController *zhengku = [[ZhengKuTableViewController alloc]init];
-//    UINavigationController *nazhengku = [[UINavigationController alloc]initWithRootViewController:zhengku];
-//    
-//    
-//    ZMDNMainViewController *viewC = [[ZMDNMainViewController alloc] init];
-//    UINavigationController  *nav = [[ZMDNNavViewController alloc] initWithRootViewController:viewC];
-//    
-//    
-//    Demo2ViewController *zhengwu = [[Demo2ViewController alloc]init];
-//    
-//    
-//    hudongViewController *hudong = [[hudongViewController alloc]init];
-//    UINavigationController *nazhengVC= [[UINavigationController alloc]initWithRootViewController:hudong];
-//    
-//   
-//    
-//    nazhengVC.tabBarItem.title = @"民生";
-//    nazhengVC.tabBarItem.image = [UIImage imageNamed:@"minshengss"];
-//    nazhengVC.tabBarItem.imageInsets = UIEdgeInsetsMake(-5, 0, 5, 0);
-//
-//
-//    
-//    
-//    UITabBarController *tabbarcontroller = [[UITabBarController alloc]init];
-//    tabbarcontroller.viewControllers = @[movie,nazhengku,nav,zhengwu,nazhengVC];
-//    tabbarcontroller.tabBar.barTintColor = [UIColor clearColor];
-//    tabbarcontroller.selectedIndex = 2;
-//    
-//    [[UITabBar appearance] setShadowImage:[UIImage new]];
-//    
-//    [tabbarcontroller.tabBar setBackgroundImage:[UIImage new]];
-//    
-//    UILabel *lable = [[UILabel alloc]initWithFrame:CGRectMake(0, -7, ScreenW, 56)];
-//    lable.backgroundColor = [UIColor whiteColor];
-//    
-//    // lable.backgroundColor = [UIColor whiteColor];
-//    [tabbarcontroller.tabBar addSubview:lable];
-//    [tabbarcontroller.tabBar sendSubviewToBack:lable];
-//    
-//    UILabel *lab = [[UILabel alloc]initWithFrame:CGRectMake(0, -7, ScreenW, 1)];
-//    lab.backgroundColor = [UIColor colorWithRed:231/255.0 green:231/255.0 blue:231/255.0 alpha:1];
-//    [tabbarcontroller.tabBar addSubview:lab];
-//    
-//    
-//    [UIApplication sharedApplication].keyWindow.rootViewController = tabbarcontroller;
-    
-    
 
     ZMDNMainViewController *mainVC =  [[ZMDNMainViewController alloc] init];
     _nav = [[ZMDNNavViewController alloc] initWithRootViewController:mainVC];
     //视听
     ZMDZBViewController *ZhiBovc = [[ZMDZBViewController alloc] initWithAddVCARY:@[[CustomPagerController new],[YinPinViewController new],[ZMDDSViewController new]] TitleS:@[@"电视点播",@"广播直播",@"电视直播"]];
     UINavigationController *ZhiBonav = [[UINavigationController alloc] initWithRootViewController:ZhiBovc];
-    
-    
   
     //新直播
-    ZMDZhiBoCenterViewController *newvc = [[ZMDZhiBoCenterViewController alloc] initWithAddVCARY:@[[ZBDTTableViewController new],[ZBDTTableViewController new],[ZMDZBRoomViewController new]] TitleS:@[@"视频直播",@"图文直播",@"直播间"]];
-    
+    ZMDZhiBoCenterViewController *newvc = [[ZMDZhiBoCenterViewController alloc] initWithAddVCARY:@[[ZMDShiPinViewController new],[ZMDShiPinViewController new],[ZMDZBRoomViewController new]] TitleS:@[@"视频直播",@"图文直播",@"直播间"]];
     
     
     UINavigationController *nzhiboav = [[UINavigationController alloc] initWithRootViewController:newvc];

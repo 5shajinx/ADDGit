@@ -158,7 +158,7 @@ static BOOL isProduction = FALSE;
         NSString *st = [infoDic objectForKey:@"CFBundleShortVersionString"];
         [st writeToFile:text atomically:YES encoding:NSUTF8StringEncoding error:nil];
     }
-    
+
     
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"firstLaunch"])
     {
@@ -381,89 +381,10 @@ static BOOL isProduction = FALSE;
 - (void)mainKuangJiaTwo
 {
     
-  //  CustomPagerController   *movie   = [[CustomPagerController alloc]init];
-    
-   //新直播
- //   ZMDZBViewController *newvc = [[ZMDZBViewController alloc] initWithAddVCARY:@[[ZBDTTableViewController new],[YinPinViewController new],[ZMDDSViewController new]] TitleS:@[@"云直播",@"广播",@"电视"]];
- 
-    //新直播
-    ZMDZhiBoCenterViewController *newvc = [[ZMDZhiBoCenterViewController alloc] initWithAddVCARY:@[[ZMDShiPinViewController new],[ZMDPicTextZBViewController new],[ZMDZBRoomViewController new]] TitleS:@[@"视频直播",@"图文直播",@"直播间"]];
-    
-    //新直播
-   // ZMDZhiBoCenterViewController *newvc = [[ZMDZhiBoCenterViewController alloc] initWithAddVCARY:@[[ZBDTTableViewController new],[ZBDTTableViewController new],[ZMDZBRoomViewController new]] TitleS:@[@"视频直播",@"图文直播",@"直播间"]];
-      UINavigationController *nzhiboav = [[UINavigationController alloc] initWithRootViewController:newvc];
-    
-    ZMDZBViewController *ZhiBovc = [[ZMDZBViewController alloc] initWithAddVCARY:@[[CustomPagerController new],[YinPinViewController new],[ZMDDSViewController new]] TitleS:@[@"云直播",@"广播",@"电视"]];
-    UINavigationController *ZhiBonav = [[UINavigationController alloc] initWithRootViewController:ZhiBovc];
-    
-    
-    
-    
     ZMDNGuideViewController *guiVC = [[ZMDNGuideViewController alloc] init];
     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"firstLaunch"];
     _nav = [[ZMDNNavViewController alloc] initWithRootViewController:guiVC];
-    
-    
-    Demo2ViewController *zhengwu = [[Demo2ViewController alloc]init];
-    
-  //  ZBDTTableViewController  *haa  = [[ZBDTTableViewController alloc]init];
-    hudongViewController *hudong = [[hudongViewController alloc]init];
-    //民生
-    JRSegmentViewController *vc = [[JRSegmentViewController alloc] init];
-    UINavigationController *navi = [[UINavigationController alloc]initWithRootViewController:vc];
-    vc.segmentBgColor = [UIColor colorWithRed:244/255.0 green:244/255.0 blue:244/255.0 alpha:1];
-    vc.indicatorViewColor =  [UIColor redColor];
-    vc.titleColor = [UIColor redColor];
-    [vc setViewControllers:@[hudong]];
-    [vc setTitles:@[@"网络问政"]];
-    
-    
-    UITabBarController *tabbarcontroller = [[UITabBarController alloc]init];
-    tabbarcontroller.viewControllers = @[ZhiBonav,zhengwu,_nav,nzhiboav,navi];
-    tabbarcontroller.tabBar.barTintColor = [UIColor clearColor];
-    tabbarcontroller.selectedIndex = 2;
-    
-    
-    
-    CGRect rect = CGRectMake(0, 0, ScreenW, ScreenH);
-    UIGraphicsBeginImageContext(rect.size);
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextSetFillColorWithColor(context, [[UIColor clearColor] CGColor]);
-    CGContextFillRect(context, rect);
-    UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    [tabbarcontroller.tabBar setBackgroundImage:img];
-    [tabbarcontroller.tabBar setShadowImage:img];
-    
-    
-    
-    
-    UILabel *lable = [[UILabel alloc]initWithFrame:CGRectMake(0, -5, ScreenW, 54)];
-    lable.backgroundColor = [UIColor whiteColor];
-    [tabbarcontroller.tabBar addSubview:lable];
-    [tabbarcontroller.tabBar sendSubviewToBack:lable];
-    
-    UILabel *lab = [[UILabel alloc]initWithFrame:CGRectMake(0, -5, ScreenW, 1)];
-    lab.backgroundColor = [UIColor colorWithRed:231/255.0 green:231/255.0 blue:231/255.0 alpha:1];
-    [tabbarcontroller.tabBar addSubview:lab];
-    //[tabbarcontroller.tabBar setBackgroundImage:[UIImage imageNamed:@"ccc.png"]];
-    tabbarcontroller.tabBar.hidden = YES;
-    
-    for (UIBarItem *item in tabbarcontroller.tabBar.items) {
-        [item setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
-                                      [UIFont fontWithName:@"Helvetica" size:14.0], NSFontAttributeName, nil]
-                            forState:UIControlStateNormal];
-    }
-    
-    // 字体颜色 选中
-    [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue-Bold" size:14.0F], NSForegroundColorAttributeName : [UIColor redColor]} forState:UIControlStateSelected];
-    // 字体颜色 未选中
-    [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName : [UIFont systemFontOfSize:14.0F],  NSForegroundColorAttributeName:[UIColor grayColor]} forState:UIControlStateNormal];
-    
-    [[UITabBar appearance] setTintColor:[UIColor redColor]];
-    
-    self.window.rootViewController = tabbarcontroller;
-    
+    self.window.rootViewController = _nav;
 }
 
 - (void)application:(UIApplication *)application
