@@ -584,7 +584,7 @@ static CGFloat const MaxScale = 1.0;/** 选中文字放大  */
     leftButton.transform = CGAffineTransformMakeScale(scaleL * transScale + 1, scaleL * transScale + 1);
     rightButton.transform = CGAffineTransformMakeScale(scaleR * transScale + 1, scaleR * transScale + 1);
     
-    NSLog(@"pppppppppp%@%@",leftButton.titleLabel.text,rightButton.titleLabel.text);
+   // NSLog(@"pppppppppp%@%@",leftButton.titleLabel.text,rightButton.titleLabel.text);
     [rightButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [leftButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     

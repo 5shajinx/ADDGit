@@ -158,17 +158,20 @@ static NSString *const kHeaderID = @"kHeaderID";
                     
                     // 或者可以像下面这样来处理
                     // 缓存最初的元素
-                    id tempFirst = oldRows[_currentIndexPath.row];
-                    for (NSInteger index = _currentIndexPath.row; index<newIndexPath.row; index++) {
-                        if (index != newIndexPath.row - 1) {
-                            // 这之间的所有的元素前移一位
-                            oldRows[index] = oldRows[index++];
-                        }
-                        else {
-                            // 第一个元素移动到这个区间的最后
-                            oldRows[index] = tempFirst;
-                        }
-                    }
+//                    id tempFirst = oldRows[_currentIndexPath.row];
+//                    for (NSInteger index = _currentIndexPath.row; index<newIndexPath.row; index++) {
+//                        if (index != newIndexPath.row - 1) {
+//                            // 这之间的所有的元素前移一位
+//                            oldRows[index] = oldRows[index++];
+//                        }
+//                        else {
+//                            // 第一个元素移动到这个区间的最后
+//                            oldRows[index] = tempFirst;
+//                        }
+//                    }
+                    
+                    
+                    
 
                 }
                 if (newIndexPath.row < _currentIndexPath.row) {

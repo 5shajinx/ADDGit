@@ -20,10 +20,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UIImageView *image = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"hd_video_info_purchase_alert_foreign"]];
+   // UIImageView *image = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"hd_video_info_purchase_alert_foreign"]];
     
-    [self.view addSubview:image];
-    [image mas_makeConstraints:^(MASConstraintMaker *make) {
+   // [self.view addSubview:image];
+    
+    UILabel *label = [[UILabel alloc]init];
+    label.text = @"本功能暂未开放,敬请期待!";
+    label.textAlignment = NSTextAlignmentCenter;
+    
+    [self.view addSubview:label];
+    
+    [label mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.offset(20);
         make.left.right.offset(0);
         make.bottom.offset(0);

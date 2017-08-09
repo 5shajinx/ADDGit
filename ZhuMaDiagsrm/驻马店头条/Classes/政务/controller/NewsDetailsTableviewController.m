@@ -728,9 +728,6 @@ self.tableview.backgroundColor = [UIColor colorWithRed:246/255.0 green:245/255.0
         dowLabel.backgroundColor = [UIColor colorWithRed:231/255.0 green:231/255.0 blue:231/255.0 alpha:1];
             
             
-            
-            
-            
           
         [footview addSubview:dowLabel];
         // [footview addSubview:leftlabel];
@@ -1377,14 +1374,16 @@ self.tableview.backgroundColor = [UIColor colorWithRed:246/255.0 green:245/255.0
     //3.通过路径获取数据
     NSString *string = [NSString stringWithContentsOfFile:AtextFilePath encoding:NSUTF8StringEncoding error:nil];
     __weak typeof(self) weakself = self;
+    
     if (str != nil && string != nil){
-        
+  
         NSDictionary *para;
         if ([Manager sharedManager].jinru != nil) {
             para = @{@"username":string,@"id":self.ar_id,@"classid":self.ar_cateid,@"userid":str,@"saytext":self.textfield.text};
         }else {
             para = @{@"username":string,@"id":self.ar_id,@"classid":self.ar_cateid,@"userid":str,@"saytext":self.textfield.text,@"state":@"1"};
         }
+        
         [session POST:@"http://zmdtt.zmdtvw.cn/Api/Pl/add/" parameters:para constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
         } progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
             
@@ -1396,6 +1395,9 @@ self.tableview.backgroundColor = [UIColor colorWithRed:246/255.0 green:245/255.0
             NSNumber *number = [dic objectForKey:@"code"];
             NSNumberFormatter* numberFormatter = [[NSNumberFormatter alloc] init];
             NSString *code = [numberFormatter stringFromNumber:number];
+            
+            
+           // NSLog(@"8888888%@",dic);
             if ([code isEqualToString:@"0"] ){
                 [weakself lodCommandList];
             }

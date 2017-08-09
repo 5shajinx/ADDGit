@@ -16,7 +16,6 @@
 		B809729E1EE6516600BF53CA /* min7.png in Resources */ = {isa = PBXBuildFile; fileRef = B809729D1EE6516600BF53CA /* min7.png */; };
 		B80972A31EE653AA00BF53CA /* ErWeiMaController.m in Sources */ = {isa = PBXBuildFile; fileRef = B80972A21EE653AA00BF53CA /* ErWeiMaController.m */; };
 		B80BB2781E9F18AA00E0D2AD /* commentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B80BB2771E9F18AA00E0D2AD /* commentModel.m */; };
-		B80C2E901F0B7B6D00617EFE /* ZJTagView.m in Sources */ = {isa = PBXBuildFile; fileRef = B80C2E871F0B7B6D00617EFE /* ZJTagView.m */; };
 		B80C2E911F0B7B6D00617EFE /* ZJTagFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = B80C2E891F0B7B6D00617EFE /* ZJTagFlowLayout.m */; };
 		B80C2E921F0B7B6D00617EFE /* ZJTagItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B80C2E8B1F0B7B6D00617EFE /* ZJTagItem.m */; };
 		B80C2E931F0B7B6D00617EFE /* ZJTagViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B80C2E8D1F0B7B6D00617EFE /* ZJTagViewCell.m */; };
@@ -25,6 +24,7 @@
 		B80C2E9E1F0BA61400617EFE /* NSArray+HYBUnicodeReadable.m in Sources */ = {isa = PBXBuildFile; fileRef = B80C2E991F0BA61400617EFE /* NSArray+HYBUnicodeReadable.m */; };
 		B80C2E9F1F0BA61400617EFE /* NSDictionary+HYBUnicodeReadable.m in Sources */ = {isa = PBXBuildFile; fileRef = B80C2E9B1F0BA61400617EFE /* NSDictionary+HYBUnicodeReadable.m */; };
 		B80C2EA01F0BA61400617EFE /* NSSet+HYBUnicodeReadable.m in Sources */ = {isa = PBXBuildFile; fileRef = B80C2E9D1F0BA61400617EFE /* NSSet+HYBUnicodeReadable.m */; };
+		B8106F041F31D93D007AC025 /* ZJTagView.m in Sources */ = {isa = PBXBuildFile; fileRef = B8106F031F31D93D007AC025 /* ZJTagView.m */; };
 		B818C4DF1E45A62300172B4F /* SQMenuShowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B818C4DB1E45A62300172B4F /* SQMenuShowCell.m */; };
 		B818C4E01E45A62300172B4F /* SQMenuShowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B818C4DC1E45A62300172B4F /* SQMenuShowCell.xib */; };
 		B818C4E11E45A62300172B4F /* SQMenuShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = B818C4DE1E45A62300172B4F /* SQMenuShowView.m */; };
@@ -474,7 +474,6 @@
 		B80BB2761E9F18AA00E0D2AD /* commentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = commentModel.h; sourceTree = "<group>"; };
 		B80BB2771E9F18AA00E0D2AD /* commentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = commentModel.m; sourceTree = "<group>"; };
 		B80C2E861F0B7B6D00617EFE /* ZJTagView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJTagView.h; sourceTree = "<group>"; };
-		B80C2E871F0B7B6D00617EFE /* ZJTagView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJTagView.m; sourceTree = "<group>"; };
 		B80C2E881F0B7B6D00617EFE /* ZJTagFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJTagFlowLayout.h; sourceTree = "<group>"; };
 		B80C2E891F0B7B6D00617EFE /* ZJTagFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJTagFlowLayout.m; sourceTree = "<group>"; };
 		B80C2E8A1F0B7B6D00617EFE /* ZJTagItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJTagItem.h; sourceTree = "<group>"; };
@@ -490,6 +489,7 @@
 		B80C2E9B1F0BA61400617EFE /* NSDictionary+HYBUnicodeReadable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+HYBUnicodeReadable.m"; sourceTree = "<group>"; };
 		B80C2E9C1F0BA61400617EFE /* NSSet+HYBUnicodeReadable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSSet+HYBUnicodeReadable.h"; sourceTree = "<group>"; };
 		B80C2E9D1F0BA61400617EFE /* NSSet+HYBUnicodeReadable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSSet+HYBUnicodeReadable.m"; sourceTree = "<group>"; };
+		B8106F031F31D93D007AC025 /* ZJTagView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJTagView.m; sourceTree = "<group>"; };
 		B818C4DA1E45A62300172B4F /* SQMenuShowCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQMenuShowCell.h; sourceTree = SOURCE_ROOT; };
 		B818C4DB1E45A62300172B4F /* SQMenuShowCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQMenuShowCell.m; sourceTree = SOURCE_ROOT; };
 		B818C4DC1E45A62300172B4F /* SQMenuShowCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SQMenuShowCell.xib; sourceTree = SOURCE_ROOT; };
@@ -1295,7 +1295,7 @@
 			isa = PBXGroup;
 			children = (
 				B80C2E861F0B7B6D00617EFE /* ZJTagView.h */,
-				B80C2E871F0B7B6D00617EFE /* ZJTagView.m */,
+				B8106F031F31D93D007AC025 /* ZJTagView.m */,
 				B80C2E881F0B7B6D00617EFE /* ZJTagFlowLayout.h */,
 				B80C2E891F0B7B6D00617EFE /* ZJTagFlowLayout.m */,
 				B80C2E8A1F0B7B6D00617EFE /* ZJTagItem.h */,
@@ -3381,7 +3381,6 @@
 				D4D004131D1BE73000A94033 /* BuMenOneTableViewController.m in Sources */,
 				B8C6ADAC1E9C5ECC00B5F8EA /* ActModel.m in Sources */,
 				D4621F7A1D347D300072B9CB /* RKAlertView.m in Sources */,
-				B80C2E901F0B7B6D00617EFE /* ZJTagView.m in Sources */,
 				D44A27B51D051FC30093A891 /* XLVideoPlayer.m in Sources */,
 				D43C6FAC1D3776B5002FBDFA /* BMLBModel.m in Sources */,
 				B87EF43E1E651BEB00B47E06 /* ZMDUserTableViewController.m in Sources */,
@@ -3421,6 +3420,7 @@
 				D446F4771D36428200A906C4 /* ShouCangCell.m in Sources */,
 				D401082D1D38927D004A66E4 /* DWHFModel.m in Sources */,
 				D4C867571CE95FC100EB49CE /* UIRefreshControl+AFNetworking.m in Sources */,
+				B8106F041F31D93D007AC025 /* ZJTagView.m in Sources */,
 				B86718B21E481C6900283F6B /* ZhiBoJiZheViewController.m in Sources */,
 				D4480AEF1D3F7A8500656A8A /* DLLRUCache.m in Sources */,
 				B8C769101F0B3A99003E659F /* ZMDAddViewController.m in Sources */,

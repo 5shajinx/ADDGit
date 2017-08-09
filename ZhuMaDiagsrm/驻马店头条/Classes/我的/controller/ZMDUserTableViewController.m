@@ -251,14 +251,14 @@ NSInteger const Simble_TOP  = 10;
     
     // app版本
     NSString *app_Version = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
-    NSLog(@"app_Version .. %@",app_Version);
+ //   NSLog(@"app_Version .. %@",app_Version);
     // app build版本
     NSString *app_build = [infoDictionary objectForKey:@"CFBundleVersion"];
-    NSLog(@"app_build >> %@",app_build);
+  //  NSLog(@"app_build >> %@",app_build);
     
     
     NSString *deviceName = [self getDeviceName];
-    NSLog(@"设备型号-->%@", deviceName);
+  //  NSLog(@"设备型号-->%@", deviceName);
     
 //    NSString *iPhoneName = [UIDevice currentDevice].name;
 //    NSLog(@"iPhone名称-->%@", iPhoneName);
@@ -652,7 +652,8 @@ NSInteger const Simble_TOP  = 10;
         NSError *err;
         NSMutableDictionary *dicc = [NSJSONSerialization JSONObjectWithData:madata options:NSJSONReadingAllowFragments error:&err];
         
-        //        NSLog(@" //nickname  password  phone  ptuid  qopenid  type  username  wopenid  xopenid     ======  %@",dicc );
+        
+               // NSLog(@" //nickname  password  phone  ptuid  qopenid  type  username  wopenid  xopenid     ======  %@",dicc );
         //nickname  password  phone  ptuid  qopenid  type  username  wopenid  xopenid
         
         [Manager sharedManager].string    = [[dicc objectForKey:@"user"] objectForKey:@"nickname"];
@@ -676,9 +677,14 @@ NSInteger const Simble_TOP  = 10;
         
         
         
-        NSNumber *numString = [[dicc objectForKey:@"user"] objectForKey:@"ptuid"];
-        NSNumberFormatter* numberpt = [[NSNumberFormatter alloc] init];
-        NSString *ptuid = [numberpt stringFromNumber:numString];
+//        NSNumber *numString = [[dicc objectForKey:@"user"] objectForKey:@"ptuid"];
+//        NSNumberFormatter* numberpt = [[NSNumberFormatter alloc] init];
+//        NSString *ptuid = [numberpt stringFromNumber:numString];
+//        NSLog(@"ppppppppppp%@",ptuid);
+
+           NSNumber *ptuid = [[dicc objectForKey:@"user"] objectForKey:@"ptuid"];
+
+        
         
         NSNumber *number = [dicc objectForKey:@"code"];
         NSNumberFormatter* numberFormatter = [[NSNumberFormatter alloc] init];
@@ -690,7 +696,8 @@ NSInteger const Simble_TOP  = 10;
             [self.textfield resignFirstResponder];
             NSString *dou = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)firstObject];
             NSString *textPat = [dou stringByAppendingPathComponent:@"ptuid.text"];
-            NSString *ptuidstr = ptuid;
+            NSString *ptuidstr = [NSString stringWithFormat:@"%@",ptuid];
+            
             [ptuidstr writeToFile:textPat atomically:YES encoding:NSUTF8StringEncoding error:nil];
             [weakself isornotlogin];
             [weakself readData];

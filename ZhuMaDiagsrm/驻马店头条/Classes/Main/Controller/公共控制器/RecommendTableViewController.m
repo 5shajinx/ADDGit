@@ -95,26 +95,27 @@ static NSString *zhuyenews = @"zhuyenews";
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     SYCollectionModel *model = self.collectionArr[indexPath.row];
     NSString *restr = [NSString stringWithFormat:@"%@",model.nurl];
-    
-    if ([restr isEqualToString:@"http://zmdtt.zmdtvw.cn/public/zt/list.html"]) {
-        //纯web界面 公用界面(专题)
-        [self lodHomePageNavigation];
-        
-        SYCollectionModel *model =  [self.collectionArr objectAtIndex:indexPath.row];
-        
-        
-        WaiLianController *subVc = [[WaiLianController alloc]init];
-        
-        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:subVc];
-        subVc.urlString = [NSString stringWithFormat:@"%@",model.nurl];
-        subVc.titleename = [NSString stringWithFormat:@"%@",model.nname];
-        
-        
-        [self presentViewController:nav animated:YES completion:nil];
-        
-
-        
-    }else if([restr isEqualToString:@"zmdtt:sign"]){
+//    
+//    if ([restr isEqualToString:@"http://zmdtt.zmdtvw.cn/public/zt/list.html"]) {
+//        //纯web界面 公用界面(专题)
+//        [self lodHomePageNavigation];
+//        
+//        SYCollectionModel *model =  [self.collectionArr objectAtIndex:indexPath.row];
+//        
+//        
+//        WaiLianController *subVc = [[WaiLianController alloc]init];
+//        
+//        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:subVc];
+//        subVc.urlString = [NSString stringWithFormat:@"%@",model.nurl];
+//        subVc.titleename = [NSString stringWithFormat:@"%@",model.nname];
+//        
+//        
+//        [self presentViewController:nav animated:YES completion:nil];
+//        
+//
+//        
+//    }else
+        if([restr isEqualToString:@"zmdtt:sign"]){
         //签到
         QDViewController *vc = [[QDViewController alloc] initWithAddVCARY:@[[SignWebViewController new],[ShopIngViewController new],[ActivityRuleViewController new]] TitleS:@[@"签到",@"商城",@"流量"]];
         UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
@@ -180,7 +181,28 @@ NSString *sttttt = [NSString stringWithFormat:@"%@",[diccc objectForKey:@"menu_t
         
         
         
+    }else{
+        
+        //纯web界面 公用界面(专题)
+        //  [self lodHomePageNavigation];
+        
+        SYCollectionModel *model =  [self.collectionArr objectAtIndex:indexPath.row];
+        
+        
+        WaiLianController *subVc = [[WaiLianController alloc]init];
+        
+        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:subVc];
+        subVc.urlString = [NSString stringWithFormat:@"%@",model.nurl];
+        subVc.titleename = [NSString stringWithFormat:@"%@",model.nname];
+        
+        
+        [self presentViewController:nav animated:YES completion:nil];
+        
+        
+        
+        
     }
+
     
 
     
@@ -304,7 +326,7 @@ NSString *sttttt = [NSString stringWithFormat:@"%@",[diccc objectForKey:@"menu_t
     self.recArr = [NSMutableArray arrayWithCapacity:1];
   
     //注册通知
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tongzhi:) name:@"tongzhi2" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tongzhiuuuuuu:) name:@"tongzhi2" object:nil];
     
     
     
@@ -442,7 +464,7 @@ NSString *sttttt = [NSString stringWithFormat:@"%@",[diccc objectForKey:@"menu_t
     self.tableView.tableFooterView = downview;
 }
 //通知跳转地点选择界面
-- (void)tongzhi:(NSNotification *)text{
+- (void)tongzhiuuuuuu:(NSNotification *)text{
     if ([text.userInfo[@"textOne"] isEqualToString:@"chuanshiji"]) {
         
         [[Manager sharedManager] location];

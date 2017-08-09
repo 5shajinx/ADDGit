@@ -58,6 +58,7 @@
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [self.webView loadRequest:request];
     
+    
     self.button = [UIButton buttonWithType:UIButtonTypeCustom];
     self.button.frame = CGRectMake(0, 0, 30, 30);
     [self.button setImage:[UIImage imageNamed:@"分享-2"] forState:UIControlStateNormal];
@@ -67,6 +68,8 @@
     UIBarButtonItem *nvibar = [[UIBarButtonItem alloc]initWithCustomView:self.button];
     self.navigationItem.rightBarButtonItem = nvibar;
 }
+
+
 
 
 

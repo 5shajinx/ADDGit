@@ -44,7 +44,7 @@ static NSString *ad = @"FUWUCasherad";
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     
-    self.navigationItem.title = @"政库";
+    //self.navigationItem.title = @"政库";
     
     UIButton *btnn = [UIButton buttonWithType:UIButtonTypeCustom];
     btnn.frame = CGRectMake(20, 20, 30, 30);

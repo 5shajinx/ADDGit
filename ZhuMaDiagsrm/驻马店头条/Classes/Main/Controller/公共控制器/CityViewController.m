@@ -23,7 +23,7 @@
 
 static NSString *citycash = @"cityChase";
 
-@interface CityViewController ()<UITableViewDataSource,UITableViewDelegate,CLLocationManagerDelegate>
+@interface CityViewController ()<UITableViewDataSource,UITableViewDelegate,CLLocationManagerDelegate,UIAlertViewDelegate>
 {
     UITableView *_tableView;
         CLLocationManager *_locationManager;
@@ -105,7 +105,8 @@ static NSString *citycash = @"cityChase";
 //自动定位
 - (void)selectedzone{
     
-   // [Manager sharedManager].locaton = NO;
+   
+    //[Manager sharedManager].locaton = NO;
     
     [self location];
 }
@@ -113,12 +114,21 @@ static NSString *citycash = @"cityChase";
 /**
  *  定位
  */
++ (BOOL)isLocationServiceOpen {
+    if ([ CLLocationManager authorizationStatus] == kCLAuthorizationStatusDenied) {
+        return NO;
+    } else
+        return YES;
+}
 -(void)location
 {
     _locationManager = [[CLLocationManager alloc] init];
     
-    if (![CLLocationManager locationServicesEnabled]) {
+    
+    if ([ CLLocationManager authorizationStatus] == kCLAuthorizationStatusDenied) {
+        NSLog(@"44444444");
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示" message:@"定位服务没有打开，请设置打开" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        alertView.delegate = self;
         [alertView show];
     }
     
@@ -136,6 +146,25 @@ static NSString *citycash = @"cityChase";
             _locationManager.distanceFilter = distance;
             [_locationManager startUpdatingLocation];
         }
+    }
+    
+}
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex;{
+    
+    
+    if (buttonIndex == 0)
+        
+    {
+        if (IPHONE8) {
+            NSURL *url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+            if ([[UIApplication sharedApplication] canOpenURL:url]) {
+                [[UIApplication sharedApplication] openURL:url];
+            }
+        } else {
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"prefs:root=LOCATION_SERVICES"]];
+        }
+  
+        
     }
     
 }

@@ -80,6 +80,11 @@
     NSHTTPURLResponse *response = nil;
     [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:nil];
     
+    
+    
+    
+    
+    
     if (response.statusCode != 200) {
         
         

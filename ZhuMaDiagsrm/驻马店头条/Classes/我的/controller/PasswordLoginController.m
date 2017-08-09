@@ -249,9 +249,14 @@
         [Manager sharedManager].picString = [[dicc objectForKey:@"user"] objectForKey:@"photo"];
         [Manager sharedManager].qianming  = [[dicc objectForKey:@"user"] objectForKey:@"msg"];
         
-        NSNumber *numString = [[dicc objectForKey:@"user"] objectForKey:@"ptuid"];
-        NSNumberFormatter* numberpt = [[NSNumberFormatter alloc] init];
-        NSString *ptuid = [numberpt stringFromNumber:numString];
+//        NSNumber *numString = [[dicc objectForKey:@"user"] objectForKey:@"ptuid"];
+//        NSNumberFormatter* numberpt = [[NSNumberFormatter alloc] init];
+//        NSString *ptuid = [numberpt stringFromNumber:numString];
+//        
+        
+        NSNumber *ptuid = [[dicc objectForKey:@"user"] objectForKey:@"ptuid"];
+
+        
         
         NSNumber *number = [dicc objectForKey:@"code"];
         NSNumberFormatter* numberFormatter = [[NSNumberFormatter alloc] init];
@@ -262,7 +267,7 @@
             [weakself.textfield resignFirstResponder];
             NSString *dou = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)firstObject];
             NSString *textPat = [dou stringByAppendingPathComponent:@"ptuid.text"];
-            NSString *ptuidstr = ptuid;
+            NSString *ptuidstr = [NSString stringWithFormat:@"%@",ptuid];
             [ptuidstr writeToFile:textPat atomically:YES encoding:NSUTF8StringEncoding error:nil];
             [weakself isornotlogin];
             

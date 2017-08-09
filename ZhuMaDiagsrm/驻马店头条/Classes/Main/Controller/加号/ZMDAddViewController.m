@@ -43,6 +43,8 @@
    self.newsecont = [[NSMutableArray alloc]init];
  NSMutableArray *mutarray = [NSMutableArray arrayWithArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"UpArray"]];
     self.first = [[NSMutableArray alloc]init];
+    self.secont = [[NSMutableArray alloc]init];
+
     self.newaaaaaaaary= [[NSMutableArray alloc]init];
     self.newaaaaaaaary = mutarray;
     
@@ -73,6 +75,7 @@
 
     
     NSMutableArray *newfirstarray = [NSMutableArray arrayWithArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"dowArray"]];
+    self.secont = newfirstarray;
     
     self.index = newfirstarray.count;
     
@@ -169,7 +172,8 @@
   
 }
 -(void)viewWillDisappear:(BOOL)animated{
-    
+    if (_isdo) {
+        
        NSString *sst = nil;
     NSMutableArray *att = [NSMutableArray arrayWithCapacity:1];
     
@@ -183,7 +187,6 @@
     
     
     if (att.count>1) {
-  
         
     NSString *str1 = [NSString stringWithFormat:@"%@",att[0]];
     NSString *str2 = [NSString stringWithFormat:@"%@",att[1]];
@@ -208,7 +211,7 @@
     }
     
     //原始数组
-    NSArray *arrrrsdfdsbhfgadskfr = [[NSUserDefaults standardUserDefaults] objectForKey:@"ray"];
+    NSArray *arrrrsdfdsbhfgadskfr = [[NSUserDefaults standardUserDefaults] objectForKey:@"newdicc"];
         int cou = (int)_index2 + (int)_index;
         int couu = (int)arrrrsdfdsbhfgadskfr.count;
 
@@ -233,105 +236,99 @@
         return;
   
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    NSMutableArray *removeatt = [NSMutableArray arrayWithCapacity:1];
-    
-    for (int i = 0; i < _newsecont.count; i++) {
-        ZJTagItem *removeit = _newsecont[i];
-        sst = [NSString stringWithFormat:@"%@",removeit.name];
-        [removeatt addObject:sst];
         
         
-    }
+        
+        
     NSMutableDictionary *newdiccc = [NSMutableDictionary dictionaryWithDictionary:[[NSUserDefaults standardUserDefaults] objectForKey:@"newdicc"]];
     NSMutableArray *finshArr = [NSMutableArray arrayWithCapacity:1];
+
+    
     for (NSString *res in att) {
-      // NSLog(@"77778888%@",att);
-        
     
         [finshArr addObject:[newdiccc objectForKey:res]];
-        
     }
-    
-    
-    //NSLog(@"88888%@99999%@",att,removeatt);
-    
-   // NSLog(@"00000000000000000%@",finshArr);
-
-    
     
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"showUpTitle" object:nil];
-    
-   //移除finshArr重复的元素
-  //  NSMutableDictionary *dic = [[NSMutableDictionary alloc]initWithCapacity:0];
-   // NSLog(@"lllkkkkkkkk%@",finshArr);
+     //保存新的上边的 键值对
+    if (finshArr.count >0) {
 
-//    for(NSString *str in finshArr)
-//    {
-//        [dic setValue:str forKey:str];
-//    }
-//    NSLog(@"lllllllllll%@",[dic allKeys]);
-//    
-    NSSet *set = [NSSet setWithArray:finshArr];
-   // NSLog(@"%@",[set allObjects]);
-    
-    
-    //NSLog(@"lllllllllll%@",[set allObjects]);
-
-    NSArray *arrrrrrrr = [NSArray arrayWithArray:[set allObjects]];
-//       if (arrrrrrrr.count>0) {
-//        NSLog(@"uuuuuuu%@ooooo%@",arrrrrrrr,_newaaaaaaaary);
-//        [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"newfirstarray"];
-//        [[NSUserDefaults standardUserDefaults] setObject:arrrrrrrr forKey:@"newfirstarray"];
-//        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"BiaoJiForAdd"];
-//    }
-    //保存新的上边的 键值对
-    if (finshArr.count>0) {
-        NSLog(@"uuuuuuu%@ooooo%@",finshArr,_newaaaaaaaary);
-        [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"newfirstarray"];
-        [[NSUserDefaults standardUserDefaults] setObject:finshArr forKey:@"newfirstarray"];
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"BiaoJiForAdd"];
-    }
-    if (_newaaaaaaaary.count>0) {
+        
         [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"UpArray"];
-        [[NSUserDefaults standardUserDefaults] setObject: self.newaaaaaaaary forKey:@"UpArray"];
+        [[NSUserDefaults standardUserDefaults] setObject: finshArr forKey:@"UpArray"];
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"BiaoJiForAdd"];
 
     }
-    NSArray *lastarr  = [[NSUserDefaults standardUserDefaults] objectForKey:@"dowArray"];
- 
+        
+        
+        NSMutableArray *removeatt = [NSMutableArray arrayWithCapacity:1];
+        
+        for (int i = 0; i < _newsecont.count; i++) {
+            ZJTagItem *removeit = _newsecont[i];
+            sst = [NSString stringWithFormat:@"%@",removeit.name];
+            [removeatt addObject:sst];
+            
+            
+        }
     
-    if (removeatt.count>0) {
-        [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"dowArray"];
-        [[NSUserDefaults standardUserDefaults] setObject:removeatt forKey:@"dowArray"];
+    
+if (_secont.count == 0) {
+        if (_newsecont.count>0) {
+            //上次是0,这次是1
+            //code
+            NSMutableArray *arr = [NSMutableArray arrayWithCapacity:1];
+            
+            for (int i = 0; i< _newsecont.count; i++) {
+                
+                ZJTagItem *itemmm = _newsecont[i];
+                [arr addObject: itemmm.name];
+            }
+            
+            [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"dowArray"];
+            [[NSUserDefaults standardUserDefaults] setObject:arr forKey:@"dowArray"];
+
+        }else{
+            //不做操作
+        }
+        
     }
+    if (_secont.count >0) {
+        if (_newsecont.count == 0) {
+            //移除所有
+            [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"dowArray"];
+
+        }else{
+            if (_newsecont>0) {
+                //code
+                NSMutableArray *arr = [NSMutableArray arrayWithCapacity:1];
+                
+                for (int i = 0; i< _newsecont.count; i++) {
+                    
+                    ZJTagItem *itemmm = _newsecont[i];
+                    [arr addObject: itemmm.name];
+                    
+                }
+                [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"dowArray"];
+                [[NSUserDefaults standardUserDefaults] setObject:arr forKey:@"dowArray"];
+                
+            }else{
+                //移除所有
+                [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"dowArray"];
+
+            }
+        }
+    }
+//    
+//    
+//    
+    
 
     
     
     
-
-        self.Shuablock();
+    }
     
-    
-    
-    
-    
-    
+    self.Shuablock();
     
     
 }
@@ -352,17 +349,17 @@
 }
 - (void)tagView:(ZJTagView *)tagview SelectTagWithArray:(NSMutableArray *)SeleArray UnSelectWithArray:(NSMutableArray *)UnSelect{
     
-    if (_newfirst) {
-        _newfirst = nil;
-  
-    }
+   
         _newfirst = SeleArray;
-    if (_newsecont) {
-        _newsecont = nil;
-        
-    }
-     [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"dowArray"];
-    _newsecont = UnSelect;
+
+    
+ 
+        _newsecont = UnSelect;
+
+  
+       _isdo = YES;
+
+    
     
     
     

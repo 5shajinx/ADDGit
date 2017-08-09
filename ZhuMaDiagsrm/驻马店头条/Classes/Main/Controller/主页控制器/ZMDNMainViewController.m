@@ -118,11 +118,11 @@ static NSString *zhuyewebCasher = @"zhuyeCasher";
         NSMutableArray  *fileDic = [NSMutableArray arrayWithContentsOfFile:filewebCaches];
         
         //判断是否存在缓存  存在 则取数据  不存在 就请求网络
-        if (fileDic == nil) {
+      //  if (fileDic == nil) {
             [self loadTitiles];
-        }else {
-            [self hhhhhhhhhh:fileDic];
-        }
+      //  }else {
+       //     [self hhhhhhhhhh:fileDic];
+      //  }
         //回到主线程刷新ui
         dispatch_async(dispatch_get_main_queue(), ^{
             [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(movie:) name:@"city" object:nil];
@@ -176,6 +176,8 @@ static NSString *zhuyewebCasher = @"zhuyeCasher";
         NSData *madata = [[NSData alloc] initWithData:[base64Decoded dataUsingEncoding:NSUTF8StringEncoding ]] ;
         NSError *err;
         NSMutableArray *arr = [NSJSONSerialization JSONObjectWithData:madata options:NSJSONReadingMutableContainers error:&err];
+      
+        
             if ([Manager sharedManager].isErron) {
                     // 标题错乱 重新添加
             [self showOnleText:@"操作失败" delay:1.5];
@@ -192,62 +194,65 @@ static NSString *zhuyewebCasher = @"zhuyeCasher";
 //        });
         
      //   [weakSelf hhhhhhhhhh:arr];
-        
-        
-        NSMutableDictionary *newdic = [[NSMutableDictionary alloc]init];
-        for (NSDictionary *dic in arr) {
-            NSString *key =  [dic objectForKey:@"cate_name"];
-            
-            
-            [newdic setObject:dic forKey:key];
-            
-        }
-        [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"newdicc"];
-        [[NSUserDefaults standardUserDefaults] setObject:newdic forKey:@"newdicc"];
-       
-        NSMutableArray *newfirstarray = [NSMutableArray arrayWithArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"newfirstarray"]];
-        
-        NSMutableArray *murray = [NSMutableArray arrayWithArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"ray"]];
-        int aa = (int)murray.count;
-        int bb = (int)arr.count;
-        int cc = aa<bb?aa:bb;
-        
-        bool bol = true;
-        if (aa != bb) {
-            bol = false;
-        }
-        for (int i = 0; i < cc; i++) {
-            NSString *ss = [NSString stringWithFormat:@"%@",[murray[i] objectForKey:@"cate_name"]];
-            NSString *ssss = [NSString stringWithFormat:@"%@",[arr[i] objectForKey:@"cate_name"]];
-            if (![ss isEqualToString:ssss]) {
-                bol = false;
-                break;
+        //判断服务器有没有更新数组
+        NSArray *rootArray = [[NSUserDefaults standardUserDefaults] objectForKey:@"rootArr"];
+        BOOL root = [self isEqToArrWithFirstArr:arr Secarr:rootArray];
+        if (!root) {
+            //newdicc
+            NSMutableDictionary *mudic = [NSMutableDictionary dictionaryWithCapacity:1];
+            NSLog(@"9999999%@",arr);
+            for (int i = 0; i<arr.count; i++) {
+                NSDictionary *dic = arr[i];
+                
+                NSString *str = [NSString stringWithFormat:@"%@",[dic objectForKey:@"cate_name"]];
+                
+                [mudic setObject:arr[i] forKey:str];
+                
+                
+                
             }
-            
-        }
-        
-        if (bol &&(newfirstarray.count>1)) {
-         //   NSLog(@"两个数组的内容相同！");
-            
-            if ([[NSUserDefaults standardUserDefaults] boolForKey:@"BiaoJiForAdd"] ) {
-              [weakSelf textaddxiaohguo:newfirstarray];
-            } else{
-                [weakSelf textaddxiaohguo:arr];
-   
-            }
-            
-        }else{
-        //    NSLog(@"两个数组的内容不相同！");
-             [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"ray"];
-          [[NSUserDefaults standardUserDefaults] setObject:arr forKey:@"ray"];  
-       
-            
-            [weakSelf textaddxiaohguo:arr];
-        }
-        
-        
-        
+            [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"newdicc"];
 
+            [[NSUserDefaults standardUserDefaults] setObject:mudic forKey:@"newdicc"];
+            
+            [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"dowArray"];
+
+            [weakSelf textaddxiaohguo:arr];
+            //保存服务器来的数组
+            [[NSUserDefaults standardUserDefaults] setObject:arr forKey:@"rootArr"];
+            return;
+            
+        }
+
+        NSArray *Uparray = [[NSUserDefaults standardUserDefaults]objectForKey:@"UpArray"];
+        
+       // NSLog(@"99999999999999999&%@",Uparray);
+        //判断数组中是否有重复的元素
+        
+        NSMutableDictionary *dic = [[NSMutableDictionary alloc]initWithCapacity:0];
+        for(NSString *str in Uparray)
+        {
+            [dic setValue:str forKey:str];
+        }
+       // NSLog(@"%@",[dic allKeys]);
+        if ([dic allKeys].count == Uparray.count) {
+            
+            
+            
+            
+            //没有重复的元素
+            [weakSelf textaddxiaohguo:Uparray];
+        } else{
+            [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"dowArray"];
+
+            [weakSelf textaddxiaohguo:arr];
+            
+        }
+        
+        
+        
+        
+        
         
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -258,6 +263,22 @@ static NSString *zhuyewebCasher = @"zhuyeCasher";
         
         
     }];
+}
+//判断两个数组是否相同
+- (BOOL)isEqToArrWithFirstArr:(NSArray *)firstArr Secarr:(NSArray *)secArr{
+    if (firstArr.count != secArr.count) {
+        return NO;
+        
+    }
+    NSMutableSet *set1 = [NSMutableSet setWithArray:firstArr];
+    NSMutableSet *set2 = [NSMutableSet setWithArray:secArr];
+    [set1 minusSet:set2];
+    if (set1.count>0) {
+        return NO;
+    }
+    
+    return YES;
+    
 }
 //测试栏目切换效果
 - (void)textaddxiaohguo:(NSArray *)add{
@@ -296,48 +317,13 @@ static NSString *zhuyewebCasher = @"zhuyeCasher";
   //  NSLog(@"^^^^^^^^^^^^^^^^^^^%@",self.slideVC.titlesArr);
 
     [_slideVC remove];
-   // NSLog(@"7777%@%@",_titleArr[0],_titleArr[1]);
     if (_titleArr.count>1) {
-        
-    
-   // NSString *setr1 = [NSString stringWithFormat:@"%@",_titleArr[0]];
-   // NSString *setr2 = [NSString stringWithFormat:@"%@",_titleArr[1]];
-
- //   if (([setr1 isEqualToString:@"推荐"]) &&([setr2 isEqualToString:@"热点"])) {
+ 
         self.slideVC.titlesArr = _titleArr;
         [self jyqaddChildViewController];
 
 
-   // } else{
-        
-
-   //     _isErron = YES;
-        
-        
-   //     [self loadTitiles];
-
-        
-   // }
-    }else{
-        
-    //    _isErron = YES;
-        
-        
-     //   [self loadTitiles];
     }
-    
-//    self.bb = false;
-//    self.bbb = false;
-//    for (int i = 0; i < _culumArr.count; i++){
-//        ZMDNColumModel *model = _culumArr[i];
-//        int a = (int)model.sort;
-//        if (a == 3) {
-//            _bb = true;
-//        } else if(a == 4){
-//            _bbb = true;
-//        }
-//        
-//    }
     
     
     
